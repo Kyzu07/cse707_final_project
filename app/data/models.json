@@ -1,0 +1,18 @@
+{
+  "models": [
+    {
+      "name": "kaizu/bn_chat",
+      "description": "Fine-tuned version of llama2-v0.1-instruct from BanglaLLM in huggingface. Quantized to 4bit -> q4_k_m using llama.cpp.",
+      "tags": [
+        "latest"
+      ]
+    },
+    {
+      "name": "kaizu/bn_chat_2",
+      "description": "Fine-tuned version of llama2-v0.1-instruct from BanglaLLM in huggingface. Quantized to 4bit -> q4_k_m using llama.cpp. Trained on 2 * T4.",
+      "tags": [
+        "latest"
+      ]
+    }
+  ]
+}

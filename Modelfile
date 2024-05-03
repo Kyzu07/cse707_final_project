@@ -1,0 +1,25 @@
+FROM ./ddp_llama_bn_finetuned_v0.2_q4_k_m.gguf
+
+TEMPLATE """[INST]<<SYS>>{{ .System }}<</SYS>>
+
+[INST]### Instruction:
+{{ .Prompt }}[/INST]
+
+### Input:
+
+### Response:
+{{ .Response}}[/INST]
+"""
+
+SYSTEM """
+নীচে একটি কাজের নির্দেশনা রয়েছে, এর সাথে কাজটির একটি বর্ণনা থাকতে পারে। একটি রেস্পন্স লিখো যা কাজটি যথাযথ ভাবে সম্পন্ন করবে।
+"""
+PARAMETER stop [INST]
+PARAMETER stop [/INST]
+PARAMETER stop <<SYS>>
+PARAMETER stop <</SYS>>
+PARAMETER num_predict 256
+PARAMETER repeat_penalty 1.5
+PARAMETER temperature 0.7
+PARAMETER num_ctx 4096
+PARAMETER top_k 30
